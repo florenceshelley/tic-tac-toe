@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Board from './Board'
+import './App.css'
 
-export default App;
+const BoardContainer = styled.div`
+  background: #fff;
+  width: 500px;
+  height: 500px;
+  border-radius: 15px;
+  box-shadow: -6px 10px 30px 4px #0003;
+  border: 20px solid #fff;
+`
+
+const App = () => (
+  <BoardContainer>
+    <Board onGameEnd={(): void => {}} />
+  </BoardContainer>
+)
+
+export default App
